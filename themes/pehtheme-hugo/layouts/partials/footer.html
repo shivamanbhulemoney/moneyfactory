@@ -1,57 +1,216 @@
-<div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoneyFactoryHQ Footer</title>
+  <!-- Font Awesome (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ---------- RESET & BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <div class="flex flex-wrap space-y-6 mb-4">
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f9fafc;
+      color: #1e293b;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-    <div class="w-full md:w-3/5 flex flex-col space-y-4 md:pr-8 lg:pr-10">
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-      <a class="flex items-center group" href="{{ .Site.BaseURL }}">
-        <!-- MONEYFACTORY LOGO - GREEN CIRCLE BADGE WITH HOVER EFFECT -->
-        <span class="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full mr-3 transition-all duration-300 ease-out group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-lg group-hover:shadow-green-500/30">
-          <svg width="24" height="24" viewBox="0 0 100 100" fill="white" class="drop-shadow-sm">
-            <!-- Factory Building -->
-            <path d="M10 80 L10 50 L25 40 L40 50 L55 35 L70 50 L75 20 L85 20 L90 80 Z"/>
-            <!-- Windows -->
-            <rect x="18" y="55" width="12" height="10" rx="2" fill="#22c55e" stroke="white" stroke-width="1.5"/>
-            <rect x="38" y="55" width="12" height="10" rx="2" fill="#22c55e" stroke="white" stroke-width="1.5"/>
-            <rect x="58" y="55" width="12" height="10" rx="2" fill="#22c55e" stroke="white" stroke-width="1.5"/>
-            <!-- Chimney Top -->
-            <rect x="78" y="15" width="10" height="6" rx="1" fill="white"/>
-            <!-- Smoke -->
-            <path d="M75 10 Q85 0 95 5 Q100 10 90 15 Q80 20 75 10" fill="white" opacity="0.9"/>
-          </svg>
-        </span>
-        
-        <span class="text-2xl font-semibold uppercase">{{ .Site.Title }}</span>
-      </a>
+    /* ---------- FOOTER (matches Yahoo! style) ---------- */
+    .site-footer {
+      background: #0b1a2f;      /* deep navy – same as Yahoo! */
+      color: #ccdbe9;
+      padding: 36px 0 24px;
+      margin-top: auto;
+      border-top: 3px solid #f5b041;  /* gold accent */
+    }
 
-      <p class="font-semibold">
-        Breaking financial news, market analysis, and money-making strategies.<br>Your trusted source for wealth-building insights.
-      </p>
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px 20px;
+    }
 
-      <p>MoneyFactory News delivers real-time coverage of forex markets, gold and silver prices, AI side hustles, stock trends, and passive income opportunities. Stay ahead of the market with expert analysis and actionable financial news.</p>
+    .footer-brand {
+      max-width: 280px;
+    }
+    .footer-brand .logo-text {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #f0f4fa;
+      letter-spacing: -0.5px;
+    }
+    .footer-brand .logo-text span {
+      color: #f5b041;           /* gold accent */
+    }
+    .footer-brand p {
+      font-size: 0.95rem;
+      margin-top: 8px;
+      opacity: 0.8;
+    }
 
+    .footer-links {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-links li {
+      margin-bottom: 6px;
+    }
+    .footer-links a {
+      color: #ccdbe9;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .footer-links a:hover {
+      color: #f5b041;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 18px;
+      font-size: 1.5rem;
+      align-items: center;
+    }
+    .footer-social a {
+      color: #b0c5da;
+      transition: 0.2s;
+    }
+    .footer-social a:hover {
+      color: #f5b041;
+      transform: scale(1.1);
+    }
+
+    /* ---------- BOTTOM BAR: EXACTLY AS IN THE IMAGE ---------- */
+    .footer-bottom {
+      margin-top: 28px;
+      border-top: 1px solid #1e3349;
+      padding-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* This matches the image exactly: "© 2026, MoneyFactoryHQ. All Rights Reserved." */
+    .footer-bottom .copyright {
+      color: #ccdbe9;
+    }
+
+    .footer-bottom a {
+      color: #ccdbe9;
+      text-decoration: none;
+      margin-left: 16px;
+    }
+    .footer-bottom a:hover {
+      color: #f5b041;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .footer-grid {
+        flex-direction: column;
+      }
+      .footer-links {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+      .footer-bottom a {
+        margin: 0 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ========== FOOTER (MoneyFactoryHQ News) ========== -->
+  <!-- Matches Yahoo! style exactly with the copyright line from the image -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- brand / about -->
+        <div class="footer-brand">
+          <div class="logo-text">MoneyFactory<span>HQ</span></div>
+          <p><i class="fas fa-quote-left" style="opacity:0.5; margin-right:4px;"></i> Your trusted guide through the financial world.</p>
+          <p style="font-size:0.85rem; margin-top:12px; opacity:0.6;">
+            <i class="fas fa-map-pin" style="margin-right:6px;"></i> New York · London · Singapore
+          </p>
+        </div>
+
+        <!-- footer links – Careers removed as requested -->
+        <div class="footer-links">
+          <ul>
+            <li><a href="/about"><i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> About</a></li>
+            <li><a href="/press"><i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> Press</a></li>
+            <li><a href="/investors"><i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> Investors</a></li>
+          </ul>
+          <ul>
+            <li><a href="/advertise"><i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> Advertise</a></li>
+            <li><a href="/privacy"><i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> Privacy</a></li>
+            <li><a href="/terms"><i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> Terms</a></li>
+            <li><a href="/cookies"><i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> Cookies</a></li>
+          </ul>
+          <ul>
+            <li><a href="/help"><i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> Help Center</a></li>
+            <li><a href="/contact"><i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> Contact</a></li>
+            <li><a href="/feedback"><i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> Feedback</a></li>
+            <li><a href="/accessibility"><i class="fas fa-chevron-right" style="font-size:0.6rem;"></i> Accessibility</a></li>
+          </ul>
+        </div>
+
+        <!-- social icons -->
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="RSS"><i class="fas fa-rss"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- ===== BOTTOM BAR: EXACTLY AS IN THE IMAGE ===== -->
+      <!-- The image shows: "yahoo!  © 2026, Yahoo. All Rights Reserved." -->
+      <!-- Now updated for MoneyFactoryHQ -->
+      <div class="footer-bottom">
+        <span class="copyright">© 2026, MoneyFactoryHQ. All Rights Reserved.</span>
+        <div>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/cookies">Cookie Preferences</a>
+          <a href="/do-not-sell">Do Not Sell My Info</a>
+          <a href="/terms">Terms of Service</a>
+        </div>
+      </div>
     </div>
-
-    <div class="self-center flex flex-col w-full md:w-2/5">
-
-{{ partial "content/social-media.html" . }}
-
-    </div>
-    
-  </div>
-
-  <div class="my-8">
-    <ul class="flex items-center space-x-4">
-      {{ range .Site.Menus.main }}
-        <li><a class="decoration-auto hover:underline font-semibold" href="{{ .URL }}">{{ .Name }}</a></li>
-      {{ end }}
-    </ul>
-  </div>
-
-  <div class="border-t pt-4">
-
-    <p class="text-sm">Copyright © {{ now.Year }} MoneyFactory News. All rights reserved. Built for informed investors worldwide.</p>
-
-  </div>
-  
-</div>
+  </footer>
+</body>
+</html>

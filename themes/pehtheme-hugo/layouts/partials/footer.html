@@ -1,15 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MoneyFactoryHQ — Footer</title>
-  
-  <!-- CNN uses CNN Sans (custom). Closest free alternative: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>DeepSeek 网站页脚</title>
+  <!-- 使用简单重置和基础字体，确保一致性 -->
   <style>
     * {
       margin: 0;
@@ -17,426 +12,271 @@
       box-sizing: border-box;
     }
 
-    :root {
-      /* CNN-style palette */
-      --cnn-red: #cc0000;
-      --bg-footer: #0d0d0d;
-      --bg-footer-bottom: #000000;
-      --text-primary: #ffffff;
-      --text-secondary: #a0a0a0;
-      --text-muted: #666666;
-      --border-color: #2a2a2a;
-      --hover-red: #ff0000;
-      --font-stack: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    }
-
     body {
-      font-family: var(--font-stack);
-      background: #f5f5f5;
-      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #f7f9fc;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      min-height: 100vh;
     }
 
-    /* ========== MAIN FOOTER (CNN Style: 6 columns, dark, clean) ========== */
-    .footer-main {
-      background: var(--bg-footer);
-      padding: 48px 0 32px;
+    /* 模拟页面主要内容，让footer自然贴在底部 */
+    .main-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      color: #2c3e50;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    /* ----- footer 核心样式 (移动优先, 完全响应式) ----- */
+    .site-footer {
+      background-color: #ffffff;
+      border-top: 1px solid #eaeef3;
+      padding: 1.5rem 1.5rem 1.2rem;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.02);
+      transition: padding 0.2s ease;
     }
 
     .footer-container {
-      max-width: 1120px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* CNN-style link grid: 6 equal columns */
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 32px;
-      margin-bottom: 40px;
-    }
-
-    @media (max-width: 1024px) {
-      .footer-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 28px;
-      }
-    }
-
-    /* Column headings — CNN style: uppercase, small, bold, muted */
-    .footer-column h3 {
-      font-family: var(--font-stack);
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--text-primary);
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-
-    /* Link lists */
-    .footer-links {
-      list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      align-items: center;
+      gap: 1rem;
     }
 
-    .footer-links li a {
-      font-family: var(--font-stack);
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--text-secondary);
+    /* 第一行：协议 + 政策 (链接) */
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem 1.2rem;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a {
+      color: #1a2634;
       text-decoration: none;
-      line-height: 1.5;
-      transition: color 0.2s ease;
+      font-weight: 500;
+      padding: 0.2rem 0;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+
+    .footer-links a:hover {
+      color: #0066cc;
+      border-bottom-color: #0066cc;
+    }
+
+    /* 分隔符 (用伪元素实现, 更灵活) */
+    .footer-links .divider {
+      color: #b0c0ce;
+      font-weight: 300;
+      user-select: none;
+    }
+
+    /* 第二行：备案 + 联系 (并排) */
+    .footer-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem 1.5rem;
+      font-size: 0.85rem;
+      color: #4a5a6a;
+    }
+
+    .footer-meta .icp {
+      color: #4a5a6a;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-meta .contact-link {
+      color: #1a2634;
+      text-decoration: none;
+      font-weight: 450;
+      transition: color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .footer-meta .contact-link:hover {
+      color: #0066cc;
+    }
+
+    /* 小屏优化 (手机) */
+    @media (max-width: 480px) {
+      .site-footer {
+        padding: 1.2rem 1rem 1rem;
+      }
+
+      .footer-links {
+        font-size: 0.9rem;
+        gap: 0.4rem 0.8rem;
+      }
+
+      .footer-links a {
+        white-space: normal; /* 允许折行, 更灵活 */
+      }
+
+      .footer-meta {
+        font-size: 0.75rem;
+        gap: 0.4rem 0.8rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      /* 去掉分隔符, 用间距和换行自然分开 */
+      .footer-links .divider {
+        display: none;  /* 移动端隐藏分隔符, 用间距代替 */
+      }
+
+      /* 针对移动端, 重新用伪元素做分隔符? 但我们用更简洁的方式: 加个竖线伪元素? 其实隐藏更干净 */
+      /* 但为了视觉清晰, 我们保留少量分隔符, 但调整 */
+    }
+
+    /* 对于极窄屏, 让所有链接堆叠更整齐 */
+    @media (max-width: 380px) {
+      .footer-links {
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+      .footer-meta {
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+      .footer-links .divider {
+        display: none; /* 完全隐藏分隔符 */
+      }
+    }
+
+    /* 大屏舒适间距 */
+    @media (min-width: 768px) {
+      .site-footer {
+        padding: 2rem 3rem 1.8rem;
+      }
+      .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .footer-links {
+        font-size: 1rem;
+        gap: 0.8rem 1.8rem;
+      }
+      .footer-meta {
+        font-size: 0.9rem;
+        gap: 0.8rem 1.8rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .footer-links {
+        gap: 1rem 2.2rem;
+      }
+    }
+
+    /* 辅助分隔符小圆点或者竖线 — 使用更现代的分隔方式 */
+    .footer-links .divider {
+      color: #c0cedc;
+      font-size: 0.7rem;
       display: inline-block;
     }
 
-    .footer-links li a:hover {
-      color: var(--text-primary);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    /* ========== SECONDARY LINKS ROW (CNN has 2 rows) ========== */
-    .footer-secondary {
-      border-top: 1px solid var(--border-color);
-      padding-top: 28px;
-      margin-bottom: 32px;
-    }
-
-    .footer-secondary-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 32px;
-    }
-
-    @media (max-width: 1024px) {
-      .footer-secondary-grid {
-        grid-template-columns: repeat(3, 1fr);
+    /* 针对移动端显示分隔符的优化 */
+    @media (max-width: 480px) {
+      .footer-links .divider {
+        display: inline-block; /* 重新显示, 但保持细小 */
+        font-size: 0.6rem;
+        color: #d0dce8;
       }
     }
 
-    @media (max-width: 640px) {
-      .footer-secondary-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    /* 增加一个简单的 '·' 分隔, 但保留版权符号等 */
+    .footer-meta .dot-sep {
+      color: #b8c8d8;
+      font-size: 0.5rem;
+      margin: 0 0.1rem;
     }
 
-    /* ========== BOTTOM BAR (CNN style: black strip, legal + copyright) ========== */
-    .footer-bottom {
-      background: var(--bg-footer-bottom);
-      border-top: 1px solid var(--border-color);
-      padding: 20px 0;
+    /* 让联系邮箱更明显 */
+    .contact-email {
+      background: #f0f4fa;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: #1a2a3a;
+      transition: background 0.2s;
+    }
+    .contact-email:hover {
+      background: #e3eaf2;
     }
 
-    .footer-bottom-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    /* MoneyFactoryHQ Logo in bottom bar (CNN puts their logo here) */
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .footer-logo-box {
-      background: var(--cnn-red);
-      color: #fff;
-      font-family: var(--font-stack);
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      padding: 4px 10px;
-      line-height: 1;
-    }
-
-    .footer-logo-text {
-      font-family: var(--font-stack);
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--text-primary);
-      letter-spacing: -0.03em;
-    }
-
-    .footer-legal {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-legal a,
-    .footer-legal span {
-      font-family: var(--font-stack);
-      font-size: 12px;
+    /* 页面整体简单样式 */
+    .main-content h2 {
       font-weight: 400;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.2s ease;
+      color: #2c3e50;
     }
-
-    .footer-legal a:hover {
-      color: var(--text-secondary);
-      text-decoration: underline;
-    }
-
-    .footer-copyright {
-      font-family: var(--font-stack);
-      font-size: 12px;
-      font-weight: 400;
-      color: var(--text-muted);
-    }
-
-    /* ========== SOCIAL ICONS (CNN style: minimal, inline) ========== */
-    .footer-socials {
-      display: flex;
-      gap: 16px;
-      margin-top: 4px;
-    }
-
-    .social-link {
-      color: var(--text-muted);
-      transition: color 0.2s ease;
-    }
-
-    .social-link:hover {
-      color: var(--text-primary);
-    }
-
-    .social-link svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-    }
-
-    @media (max-width: 640px) {
-      .footer-bottom-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-      
-      .footer-legal {
-        justify-content: center;
-      }
+    .main-content span {
+      background: #eef2f7;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      color: #0066cc;
     }
   </style>
 </head>
 <body>
-
-  <!-- ==================== FOOTER ==================== -->
-  <footer>
-    
-    <!-- Main Footer: 6 Columns (CNN Style) -->
-    <div class="footer-main">
-      <div class="footer-container">
-        
-        <!-- Row 1: Primary Categories -->
-        <div class="footer-grid">
-          
-          <!-- Column 1: Markets -->
-          <div class="footer-column">
-            <h3>Markets</h3>
-            <ul class="footer-links">
-              <li><a href="/markets/stocks">Stocks</a></li>
-              <li><a href="/markets/forex">Forex</a></li>
-              <li><a href="/markets/commodities">Commodities</a></li>
-              <li><a href="/markets/crypto">Cryptocurrency</a></li>
-              <li><a href="/markets/bonds">Bonds</a></li>
-              <li><a href="/markets/indices">Indices</a></li>
-            </ul>
-          </div>
-
-          <!-- Column 2: Economy -->
-          <div class="footer-column">
-            <h3>Economy</h3>
-            <ul class="footer-links">
-              <li><a href="/economy/gdp">GDP & Growth</a></li>
-              <li><a href="/economy/inflation">Inflation</a></li>
-              <li><a href="/economy/employment">Employment</a></li>
-              <li><a href="/economy/fed">Federal Reserve</a></li>
-              <li><a href="/economy/trade">Trade</a></li>
-              <li><a href="/economy/housing">Housing</a></li>
-            </ul>
-          </div>
-
-          <!-- Column 3: Business -->
-          <div class="footer-column">
-            <h3>Business</h3>
-            <ul class="footer-links">
-              <li><a href="/business/earnings">Earnings</a></li>
-              <li><a href="/business/ipo">IPOs</a></li>
-              <li><a href="/business/mna">M&A</a></li>
-              <li><a href="/business/startups">Startups</a></li>
-              <li><a href="/business/real-estate">Real Estate</a></li>
-              <li><a href="/business/energy">Energy</a></li>
-            </ul>
-          </div>
-
-          <!-- Column 4: Tech -->
-          <div class="footer-column">
-            <h3>Tech</h3>
-            <ul class="footer-links">
-              <li><a href="/tech/ai">Artificial Intelligence</a></li>
-              <li><a href="/tech/semiconductors">Semiconductors</a></li>
-              <li><a href="/tech/cybersecurity">Cybersecurity</a></li>
-              <li><a href="/tech/ev">Electric Vehicles</a></li>
-              <li><a href="/tech/cloud">Cloud Computing</a></li>
-              <li><a href="/tech/space">Space</a></li>
-            </ul>
-          </div>
-
-          <!-- Column 5: Policy -->
-          <div class="footer-column">
-            <h3>Policy</h3>
-            <ul class="footer-links">
-              <li><a href="/policy/white-house">White House</a></li>
-              <li><a href="/policy/congress">Congress</a></li>
-              <li><a href="/policy/regulation">Regulation</a></li>
-              <li><a href="/policy/taxes">Taxes</a></li>
-              <li><a href="/policy/healthcare">Healthcare</a></li>
-              <li><a href="/policy/infrastructure">Infrastructure</a></li>
-            </ul>
-          </div>
-
-          <!-- Column 6: Personal Finance -->
-          <div class="footer-column">
-            <h3>Personal Finance</h3>
-            <ul class="footer-links">
-              <li><a href="/personal-finance/investing">Investing 101</a></li>
-              <li><a href="/personal-finance/retirement">Retirement</a></li>
-              <li><a href="/personal-finance/taxes">Tax Planning</a></li>
-              <li><a href="/personal-finance/savings">Savings</a></li>
-              <li><a href="/personal-finance/credit">Credit & Loans</a></li>
-              <li><a href="/personal-finance/budgeting">Budgeting</a></li>
-            </ul>
-          </div>
-
-        </div>
-
-        <!-- Row 2: Secondary Links (CNN has a second row) -->
-        <div class="footer-secondary">
-          <div class="footer-secondary-grid">
-            
-            <div class="footer-column">
-              <h3>MoneyFactoryHQ</h3>
-              <ul class="footer-links">
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/careers">Careers</a></li>
-                <li><a href="/press">Press Room</a></li>
-                <li><a href="/advertise">Advertise</a></li>
-              </ul>
-            </div>
-
-            <div class="footer-column">
-              <h3>Newsletters</h3>
-              <ul class="footer-links">
-                <li><a href="/newsletters/market-brief">Market Brief</a></li>
-                <li><a href="/newsletters/tech-daily">Tech Daily</a></li>
-                <li><a href="/newsletters/weekend-wrap">Weekend Wrap</a></li>
-                <li><a href="/newsletters/all">View All</a></li>
-              </ul>
-            </div>
-
-            <div class="footer-column">
-              <h3>Podcasts</h3>
-              <ul class="footer-links">
-                <li><a href="/podcasts/market-call">Market Call</a></li>
-                <li><a href="/podcasts/bull-bear">Bull vs Bear</a></li>
-                <li><a href="/podcasts/fintech-files">Fintech Files</a></li>
-                <li><a href="/podcasts/all">View All</a></li>
-              </ul>
-            </div>
-
-            <div class="footer-column">
-              <h3>Tools</h3>
-              <ul class="footer-links">
-                <li><a href="/tools/watchlist">Watchlist</a></li>
-                <li><a href="/tools/screener">Stock Screener</a></li>
-                <li><a href="/tools/calendar">Earnings Calendar</a></li>
-                <li><a href="/tools/api">Developer API</a></li>
-              </ul>
-            </div>
-
-            <div class="footer-column">
-              <h3>Support</h3>
-              <ul class="footer-links">
-                <li><a href="/help">Help Center</a></li>
-                <li><a href="/contact">Contact Us</a></li>
-                <li><a href="/feedback">Feedback</a></li>
-                <li><a href="/status">System Status</a></li>
-              </ul>
-            </div>
-
-            <div class="footer-column">
-              <h3>Follow Us</h3>
-              <ul class="footer-links">
-                <li><a href="https://twitter.com/moneyfactoryhq">X (Twitter)</a></li>
-                <li><a href="https://linkedin.com/company/moneyfactoryhq">LinkedIn</a></li>
-                <li><a href="https://youtube.com/moneyfactoryhq">YouTube</a></li>
-                <li><a href="/rss">RSS Feeds</a></li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
+  <!-- 模拟页面主要内容区 -->
+  <div class="main-content">
+    <div>
+      <h2>✨ DeepSeek 对话界面</h2>
+      <p style="margin-top: 0.8rem; color: #4a5a6a; font-size: 0.95rem;">
+        <span>🚀 智能 · 高效 · 开放</span>
+      </p>
     </div>
+  </div>
 
-    <!-- Bottom Bar (CNN Style: black strip) -->
-    <div class="footer-bottom">
-      <div class="footer-bottom-inner">
-        
-        <div class="footer-brand">
-          <div class="footer-logo-box">MF</div>
-          <span class="footer-logo-text">MoneyFactoryHQ</span>
-        </div>
+  <!-- ========== 页脚区域 (完全根据 deepseek.com 底部信息构建) ========== -->
+  <footer class="site-footer">
+    <div class="footer-container">
 
-        <div class="footer-legal">
-          <span class="footer-copyright">© 2026 MoneyFactoryHQ. All Rights Reserved.</span>
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/terms">Terms of Use</a>
-          <a href="/cookies">Cookie Settings</a>
-          <a href="/accessibility">Accessibility</a>
-          <a href="/sitemap">Site Map</a>
-        </div>
-
-        <div class="footer-socials">
-          <a href="https://twitter.com/moneyfactoryhq" class="social-link" aria-label="X (Twitter)">
-            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://linkedin.com/company/moneyfactoryhq" class="social-link" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="https://youtube.com/moneyfactoryhq" class="social-link" aria-label="YouTube">
-            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          </a>
-        </div>
-
+      <!-- 第一行：用户协议 & 隐私政策 (来自页面) -->
+      <div class="footer-links">
+        <a href="#" aria-label="用户协议">用户协议</a>
+        <span class="divider">·</span>
+        <a href="#" aria-label="隐私政策">隐私政策</a>
+        <!-- 页面中还有 "忘记密码" 和 "登录注册" 等, 但那是登录模块, 不属于footer, 所以不放入 -->
+        <!-- 但为保留品牌元素, 我们保持简洁: 只放协议和政策 -->
+        <!-- 同时可以加一个 '联系我们' 但下面meta有, 这里不重复 -->
       </div>
-    </div>
 
+      <!-- 第二行：备案 + 联系我们 + 版权/品牌信息 (浙ICP备 + 联系我们) -->
+      <div class="footer-meta">
+        <span class="icp">浙ICP备2023025841号</span>
+        <span class="dot-sep">·</span>
+        <a href="mailto:support@deepseek.com" class="contact-link" aria-label="联系我们">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 2px;">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          联系我们
+        </a>
+        <!-- 也可以放一个版权符号, 但页面没有明确, 保留干净 -->
+      </div>
+
+      <!-- 注意: 页面底部还有 'One more step before you proceed...' 但那是验证提示, 不属于footer固定内容, 忽略 -->
+    </div>
   </footer>
-
 </body>
 </html>

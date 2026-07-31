@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>DeepSeek 网站页脚</title>
-  <!-- 使用简单重置和基础字体，确保一致性 -->
+  <title>MoneyFactory News · Footer</title>
   <style>
+    /* Reset & Base */
     * {
       margin: 0;
       padding: 0;
@@ -14,268 +14,403 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background-color: #f7f9fc;
+      background-color: #f4f6fa;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
-    /* 模拟页面主要内容，让footer自然贴在底部 */
+    /* Main content simulation */
     .main-content {
       flex: 1;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 2rem 1rem;
-      color: #2c3e50;
-      font-size: 1.2rem;
+      padding: 2rem 1.5rem;
       text-align: center;
     }
 
-    /* ----- footer 核心样式 (移动优先, 完全响应式) ----- */
+    .main-content .brand-tag {
+      display: inline-block;
+      background: #0b1e33;
+      color: #f5c842;
+      font-weight: 600;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      letter-spacing: 0.5px;
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .main-content h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #0b1e33;
+      letter-spacing: -0.5px;
+    }
+
+    .main-content h1 span {
+      background: linear-gradient(145deg, #f5b81b, #f5c842);
+      padding: 0.1rem 0.8rem;
+      border-radius: 30px;
+      color: #0b1e33;
+      font-size: 2rem;
+    }
+
+    .main-content .sub {
+      margin-top: 0.5rem;
+      color: #3a4c62;
+      font-size: 1rem;
+      background: #eef2f7;
+      padding: 0.3rem 1.2rem;
+      border-radius: 30px;
+    }
+
+    /* ===== FOOTER — MoneyFactory News (English) ===== */
     .site-footer {
-      background-color: #ffffff;
-      border-top: 1px solid #eaeef3;
-      padding: 1.5rem 1.5rem 1.2rem;
-      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.02);
-      transition: padding 0.2s ease;
+      background-color: #0b1e33;
+      color: #e6edf5;
+      border-top: 3px solid #f5c842;
+      padding: 1.8rem 1.5rem 1.4rem;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+      transition: padding 0.2s;
     }
 
     .footer-container {
-      max-width: 1200px;
+      max-width: 1240px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      gap: 1.2rem;
     }
 
-    /* 第一行：协议 + 政策 (链接) */
-    .footer-links {
+    /* ----- Row 1: Brand + Tagline (MoneyFactory News) ----- */
+    .footer-brand {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 0.75rem 1.2rem;
-      font-size: 0.95rem;
+      gap: 0.6rem 1.2rem;
+      font-size: 1.1rem;
+      letter-spacing: 0.3px;
     }
 
-    .footer-links a {
-      color: #1a2634;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.2rem 0;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s, color 0.2s;
-      white-space: nowrap;
+    .footer-brand .news-icon {
+      background: #f5c842;
+      color: #0b1e33;
+      font-weight: 700;
+      padding: 0.15rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      line-height: 1.6;
     }
 
-    .footer-links a:hover {
-      color: #0066cc;
-      border-bottom-color: #0066cc;
+    .footer-brand .brand-name {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #ffffff;
+      letter-spacing: 0.5px;
     }
 
-    /* 分隔符 (用伪元素实现, 更灵活) */
-    .footer-links .divider {
-      color: #b0c0ce;
+    .footer-brand .brand-name i {
+      font-style: normal;
+      background: #f5c842;
+      color: #0b1e33;
+      padding: 0.1rem 0.5rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      margin-left: 4px;
+    }
+
+    .footer-brand .tagline {
+      color: #b6cbd9;
+      font-size: 0.85rem;
       font-weight: 300;
-      user-select: none;
+      border-left: 1px solid #3a5a72;
+      padding-left: 0.8rem;
     }
 
-    /* 第二行：备案 + 联系 (并排) */
-    .footer-meta {
+    /* ----- Row 2: News categories / quick links (news flavor) ----- */
+    .footer-news-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
       gap: 0.5rem 1.5rem;
-      font-size: 0.85rem;
-      color: #4a5a6a;
+      font-size: 0.9rem;
+      padding: 0.2rem 0;
+    }
+
+    .footer-news-links a {
+      color: #d6e3ee;
+      text-decoration: none;
+      font-weight: 450;
+      padding: 0.2rem 0;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+      font-size: 0.88rem;
+    }
+
+    .footer-news-links a:hover {
+      color: #f5c842;
+      border-bottom-color: #f5c842;
+    }
+
+    .footer-news-links .divider {
+      color: #3a5a72;
+      user-select: none;
+      font-size: 0.6rem;
+    }
+
+    /* Special "MoneyFactory" tag */
+    .footer-news-links .mf-tag {
+      background: #f5c84220;
+      color: #f5c842;
+      padding: 0.15rem 0.7rem;
+      border-radius: 30px;
+      border: 1px solid #f5c84240;
+      font-weight: 500;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    /* ----- Row 3: Copyright + ICP + Contact (kept structure) ----- */
+    .footer-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.4rem 1.2rem;
+      font-size: 0.78rem;
+      color: #9ab3c9;
+      border-top: 1px solid #1f3850;
+      padding-top: 1rem;
+      width: 100%;
+      max-width: 700px;
+      margin-top: 0.2rem;
     }
 
     .footer-meta .icp {
-      color: #4a5a6a;
-      letter-spacing: 0.3px;
+      color: #9ab3c9;
+    }
+
+    .footer-meta .dot-sep {
+      color: #2f4d66;
+      font-size: 0.4rem;
+      margin: 0 0.1rem;
     }
 
     .footer-meta .contact-link {
-      color: #1a2634;
+      color: #d6e3ee;
       text-decoration: none;
-      font-weight: 450;
-      transition: color 0.2s;
       display: inline-flex;
       align-items: center;
       gap: 4px;
+      transition: color 0.2s;
+      font-weight: 400;
     }
 
     .footer-meta .contact-link:hover {
-      color: #0066cc;
+      color: #f5c842;
     }
 
-    /* 小屏优化 (手机) */
-    @media (max-width: 480px) {
+    .footer-meta .contact-link svg {
+      stroke: #9ab3c9;
+      transition: stroke 0.2s;
+    }
+    .footer-meta .contact-link:hover svg {
+      stroke: #f5c842;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 640px) {
       .site-footer {
-        padding: 1.2rem 1rem 1rem;
+        padding: 1.4rem 1rem 1rem;
       }
 
-      .footer-links {
-        font-size: 0.9rem;
+      .footer-brand {
+        font-size: 0.95rem;
         gap: 0.4rem 0.8rem;
+        flex-direction: column;
+        align-items: center;
+      }
+      .footer-brand .tagline {
+        border-left: none;
+        padding-left: 0;
+        font-size: 0.8rem;
+      }
+      .footer-brand .brand-name {
+        font-size: 1.1rem;
       }
 
-      .footer-links a {
-        white-space: normal; /* 允许折行, 更灵活 */
+      .footer-news-links {
+        gap: 0.3rem 0.8rem;
+        font-size: 0.8rem;
+      }
+      .footer-news-links a {
+        white-space: normal;
+        font-size: 0.8rem;
+      }
+      .footer-news-links .divider {
+        display: none;
       }
 
       .footer-meta {
-        font-size: 0.75rem;
-        gap: 0.4rem 0.8rem;
+        font-size: 0.7rem;
+        gap: 0.3rem 0.6rem;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        padding-top: 0.8rem;
+      }
+      .footer-meta .dot-sep {
+        display: none;
       }
 
-      /* 去掉分隔符, 用间距和换行自然分开 */
-      .footer-links .divider {
-        display: none;  /* 移动端隐藏分隔符, 用间距代替 */
+      .footer-news-links .mf-tag {
+        font-size: 0.7rem;
+        padding: 0.1rem 0.5rem;
       }
-
-      /* 针对移动端, 重新用伪元素做分隔符? 但我们用更简洁的方式: 加个竖线伪元素? 其实隐藏更干净 */
-      /* 但为了视觉清晰, 我们保留少量分隔符, 但调整 */
     }
 
-    /* 对于极窄屏, 让所有链接堆叠更整齐 */
-    @media (max-width: 380px) {
-      .footer-links {
+    @media (max-width: 400px) {
+      .footer-news-links {
         flex-direction: column;
-        gap: 0.3rem;
+        gap: 0.2rem;
+      }
+      .footer-news-links .divider {
+        display: none;
       }
       .footer-meta {
         flex-direction: column;
-        gap: 0.3rem;
-      }
-      .footer-links .divider {
-        display: none; /* 完全隐藏分隔符 */
+        gap: 0.2rem;
       }
     }
 
-    /* 大屏舒适间距 */
     @media (min-width: 768px) {
       .site-footer {
-        padding: 2rem 3rem 1.8rem;
+        padding: 2.2rem 3rem 1.8rem;
       }
       .footer-container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
+        gap: 1.5rem;
       }
-      .footer-links {
+      .footer-brand {
+        font-size: 1.2rem;
+        gap: 0.8rem 2rem;
+      }
+      .footer-news-links {
+        gap: 0.8rem 2.2rem;
         font-size: 1rem;
-        gap: 0.8rem 1.8rem;
       }
       .footer-meta {
-        font-size: 0.9rem;
-        gap: 0.8rem 1.8rem;
+        font-size: 0.85rem;
+        gap: 0.6rem 2rem;
       }
     }
 
     @media (min-width: 1024px) {
-      .footer-links {
-        gap: 1rem 2.2rem;
+      .footer-news-links {
+        gap: 1rem 2.8rem;
       }
     }
 
-    /* 辅助分隔符小圆点或者竖线 — 使用更现代的分隔方式 */
-    .footer-links .divider {
-      color: #c0cedc;
-      font-size: 0.7rem;
-      display: inline-block;
+    /* Helpers */
+    .footer-news-links .highlight {
+      color: #f5c842;
+      font-weight: 500;
     }
 
-    /* 针对移动端显示分隔符的优化 */
-    @media (max-width: 480px) {
-      .footer-links .divider {
-        display: inline-block; /* 重新显示, 但保持细小 */
-        font-size: 0.6rem;
-        color: #d0dce8;
-      }
-    }
-
-    /* 增加一个简单的 '·' 分隔, 但保留版权符号等 */
-    .footer-meta .dot-sep {
-      color: #b8c8d8;
-      font-size: 0.5rem;
-      margin: 0 0.1rem;
-    }
-
-    /* 让联系邮箱更明显 */
-    .contact-email {
-      background: #f0f4fa;
-      padding: 0.2rem 0.6rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      color: #1a2a3a;
-      transition: background 0.2s;
-    }
-    .contact-email:hover {
-      background: #e3eaf2;
-    }
-
-    /* 页面整体简单样式 */
-    .main-content h2 {
-      font-weight: 400;
-      color: #2c3e50;
-    }
-    .main-content span {
-      background: #eef2f7;
-      padding: 0.2rem 0.8rem;
+    .badge-news {
+      background: #f5c84215;
+      border: 1px solid #f5c84230;
       border-radius: 30px;
-      font-size: 0.9rem;
-      color: #0066cc;
+      padding: 0.1rem 0.7rem;
+      font-size: 0.7rem;
+      color: #f5c842;
+      letter-spacing: 0.3px;
     }
   </style>
 </head>
 <body>
-  <!-- 模拟页面主要内容区 -->
+  <!-- Simulated page content (news style) -->
   <div class="main-content">
-    <div>
-      <h2>✨ DeepSeek 对话界面</h2>
-      <p style="margin-top: 0.8rem; color: #4a5a6a; font-size: 0.95rem;">
-        <span>🚀 智能 · 高效 · 开放</span>
-      </p>
+    <div class="brand-tag">📰 Real-time · In-depth</div>
+    <h1>
+      MoneyFactory <span>News</span>
+    </h1>
+    <div class="sub">⚡ Global Finance · Tech · Market Insights</div>
+    <div style="margin-top: 1.2rem; display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center;">
+      <span style="background: #eef2f7; padding: 0.2rem 1rem; border-radius: 40px; font-size:0.8rem;">📈 Stocks</span>
+      <span style="background: #eef2f7; padding: 0.2rem 1rem; border-radius: 40px; font-size:0.8rem;">💹 Crypto</span>
+      <span style="background: #eef2f7; padding: 0.2rem 1rem; border-radius: 40px; font-size:0.8rem;">🏭 Manufacturing</span>
     </div>
   </div>
 
-  <!-- ========== 页脚区域 (完全根据 deepseek.com 底部信息构建) ========== -->
+  <!-- ===== FOOTER: MoneyFactory News (English) ===== -->
   <footer class="site-footer">
     <div class="footer-container">
 
-      <!-- 第一行：用户协议 & 隐私政策 (来自页面) -->
-      <div class="footer-links">
-        <a href="#" aria-label="用户协议">用户协议</a>
-        <span class="divider">·</span>
-        <a href="#" aria-label="隐私政策">隐私政策</a>
-        <!-- 页面中还有 "忘记密码" 和 "登录注册" 等, 但那是登录模块, 不属于footer, 所以不放入 -->
-        <!-- 但为保留品牌元素, 我们保持简洁: 只放协议和政策 -->
-        <!-- 同时可以加一个 '联系我们' 但下面meta有, 这里不重复 -->
+      <!-- Row 1: Brand + Tagline -->
+      <div class="footer-brand">
+        <span class="news-icon">📰 MF</span>
+        <span class="brand-name">
+          MoneyFactory <i>News</i>
+        </span>
+        <span class="tagline">｜ Facts · Independent · Value</span>
+        <span class="badge-news"># Finance News</span>
       </div>
 
-      <!-- 第二行：备案 + 联系我们 + 版权/品牌信息 (浙ICP备 + 联系我们) -->
+      <!-- Row 2: News categories / quick links + MoneyFactory tag -->
+      <div class="footer-news-links">
+        <a href="#">Home</a>
+        <span class="divider">·</span>
+        <a href="#">Markets</a>
+        <span class="divider">·</span>
+        <a href="#">Tech</a>
+        <span class="divider">·</span>
+        <a href="#">Business</a>
+        <span class="divider">·</span>
+        <a href="#">Policy</a>
+        <span class="divider">·</span>
+        <a href="#">Opinion</a>
+        <span class="divider">·</span>
+        <!-- Special: MoneyFactory tag -->
+        <span class="mf-tag">💰 MoneyFactory</span>
+        <span class="divider">·</span>
+        <a href="#" class="highlight">Podcast</a>
+      </div>
+
+      <!-- Row 3: Copyright, ICP, Contact (keep structure, English) -->
       <div class="footer-meta">
-        <span class="icp">浙ICP备2023025841号</span>
+        <span class="icp">© 2026 MoneyFactory News</span>
         <span class="dot-sep">·</span>
-        <a href="mailto:support@deepseek.com" class="contact-link" aria-label="联系我们">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 2px;">
+        <span class="icp">ICP: 浙ICP备2023025841号</span>
+        <span class="dot-sep">·</span>
+        <a href="mailto:news@moneyfactory.com" class="contact-link" aria-label="Contact the newsroom">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
             <polyline points="22,6 12,13 2,6"></polyline>
           </svg>
-          联系我们
+          Newsroom
         </a>
-        <!-- 也可以放一个版权符号, 但页面没有明确, 保留干净 -->
+        <span class="dot-sep">·</span>
+        <a href="#" class="contact-link" style="gap: 2px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          RSS
+        </a>
+        <!-- News ethics tag -->
+        <span style="color:#3a5a72; font-size:0.6rem; margin-left: 0.2rem;">⏤ Trust · Transparency</span>
       </div>
 
-      <!-- 注意: 页面底部还有 'One more step before you proceed...' 但那是验证提示, 不属于footer固定内容, 忽略 -->
     </div>
   </footer>
 </body>
